@@ -3,7 +3,7 @@ package ui;
 import java.util.Scanner;
 
 public class UIMenu {
-
+    public static String[] MONTHS = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",};
     public static void showMenu(){
         System.out.println("Welcome to My Appointments");
         System.out.println("Selecciona la opción deseada");
@@ -34,6 +34,14 @@ public class UIMenu {
             }
         }while (response != 0);
     }
+    public static void showBookAnAppointment(){
+        for (String m:MONTHS) {
+            System.out.println(m);
+        }
+    }
+    public static void MyAppointments(){
+        System.out.println("algo");
+    }
 
     public static void showPatientMenu(){
         int response = 0;
@@ -50,9 +58,11 @@ public class UIMenu {
             switch (response){
                 case 1:
                     System.out.println("::Book an appointment");
+                    showBookAnAppointment();
                     break;
                 case 2:
                     System.out.println("::My appointments");
+                    MyAppointments();
                     break;
                 case 0:
                     showMenu();
